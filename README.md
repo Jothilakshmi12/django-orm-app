@@ -5,25 +5,48 @@ To develop a Django application to store and retrieve data from a database using
 
 ## Entity Relationship Diagram
 
-Include your ER diagram here
+![ERdiagram](ERdiagram.odt)
 
 ## DESIGN STEPS
 
 ### STEP 1:
-
+creating a table using required details in Django-ORM
 ### STEP 2:
-
+upload the python code.
 ### STEP 3:
-
-Write your own steps
+push the code to github.
 
 ## PROGRAM
 
-Include your code here
+### models.py
+from django.db import models
+from django.contrib import admin
+#Create your models here.
+class student (models.Model):
+    referencenumber=models.CharField(primary_key=True,max_length=20,help_text="reference number")
+    name=models.CharField(max_length=100)
+    age=models.IntegerField()
+    email=models.EmailField()
+    number=models.IntegerField()
+
+class studentAdmin(admin.ModelAdmin):
+    list_display=('referencenumber','name','age','email','number')
+    
+### admin.py
+from django.contrib import admin
+from .models import Student,StudentAdmin
+
+admin.site.register(Student,StudentAdmin)
+
 
 ## OUTPUT
 
-Include the screenshot of your admin page.
+### Student Error
+![Studenterror](studenterror.png)
+### Student List
+![Studentlist](studentlist.png)
+
 
 
 ## RESULT
+The Programme is Excuted successfully.
