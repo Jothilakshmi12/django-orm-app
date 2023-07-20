@@ -5,7 +5,7 @@ To develop a Django application to store and retrieve data from a database using
 
 ## Entity Relationship Diagram
 
-![ERdiagram](ERdiagram.odt)
+![ERdiagram](ERdiagram.png)
 
 ## DESIGN STEPS
 
@@ -19,6 +19,7 @@ push the code to github.
 ## PROGRAM
 
 ### models.py
+```py
 from django.db import models
 from django.contrib import admin
 #Create your models here.
@@ -31,13 +32,15 @@ class student (models.Model):
 
 class studentAdmin(admin.ModelAdmin):
     list_display=('referencenumber','name','age','email','number')
+```
     
 ### admin.py
+```py
 from django.contrib import admin
 from .models import Student,StudentAdmin
 
 admin.site.register(Student,StudentAdmin)
-
+```
 
 ## OUTPUT
 
